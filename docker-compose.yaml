@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  bazarr:
+    build: .
+    container_name: bazarr_dev
+    volumes:
+      - .:/opt/bazarr # Mount the project directory inside the container
+    ports:
+      - "6767:6767" # Ensure this port is exposed
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
