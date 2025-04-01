@@ -30,7 +30,7 @@ RUN npm install
 RUN mv node_modules /node_modules
 
 # Install required system packages
-RUN apt install -y \
+RUN apt update && apt install -y \
   7zip python3-dev python3-pip python3-distutils unrar unzip ffmpeg && \
   apt clean
 
